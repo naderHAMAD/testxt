@@ -1,0 +1,61 @@
+<div class="pd-ltr-20 xs-pd-20-10">
+  <div class="min-height-200px">
+    <div class="page-header pb-20">
+      <button type="button" class="btn btn-sm text-white bg-dark mr-3 mt-2 ml-2" routerLink="/home/membertype-list"
+        matTooltip={{fr.tooltipBtnRetour}}>
+        <i class="fa fa-arrow-left" aria-hidden="true"></i>
+      </button>
+    </div>
+    <div class="card-header">{{fr.msg_details_type_membre | translate}} </div>
+
+
+    <div class="icon-list pd-20 card-box mb-30">
+      <div class="row">
+
+        <div class="col-2">
+          <strong>{{fr.label_libelle}} </strong>
+
+        </div>
+        <div class="col-4">
+          <p>{{ memberType.membreTypeLibelle }}</p>
+
+
+        </div>
+        <div class="col-2">
+          <strong>{{fr.label_libelle_arab}} </strong>
+
+        </div>
+        <div class="col-4">
+          <p>{{ memberType.membreTypeLibelleAr }}</p>
+
+        </div>
+      </div>
+
+      <!------------------------->
+
+
+
+      <div class="row">
+        <div class="col-2">
+          <strong>{{fr.label_description}}</strong>
+
+        </div>
+        <div class="col-4">
+          <p class="textDescription">{{ memberType.membreTypeDescription }}</p>
+
+        </div>
+
+        <div class="col-2">
+          <strong>{{fr.label_description_arabe}}</strong>
+
+        </div>
+        <div class="col-4">
+          <p class="textDescription">{{ memberType.membreTypeDescriptionAr }}</p>
+
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,135 @@
+<div class="pd-ltr-20 xs-pd-20-10">
+    <div class="min-height-200px">
+
+        <div class="card-box mb-30">
+
+
+            <div class="card-header">{{fr.msg_liste_type_membre | translate}} </div>
+
+
+            <div class="pd-20">
+                <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
+                    <div class="form-row m-2">
+                        <div class="input-group col">
+                            <button type="button" class="btn float-right btn-success mb-2"
+                                matTooltip="{{fr.btn_ajout  | translate }}" routerLink="/home/membertype-add">
+                                <i class="icon-copy ion-android-add"></i>
+                            </button>
+
+                        </div>
+                        <div class="col">
+                            <div class="example-form">
+
+
+                                <mat-form-field appearance="standard">
+                                    <input matInput (keyup)="filterData($event)" placeholder="{{fr.msg_search}}">
+                                </mat-form-field>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="form-row full-details">
+                        <div class="col-sm-12">
+                            <div class="mat-elevation-z8">
+                                <table mat-table matSort [dataSource]="dataSource">
+                                    <ng-container matColumnDef="membreTypeLibelle">
+                                        <th class="tabInfo" mat-header-cell mat-sort-header *matHeaderCellDef>
+                                            {{fr.label_libelle | translate}}
+                                        </th>
+                                        <td class="tabInfo" mat-cell *matCellDef="let element">
+                                            <p class="resDescription"> {{ element.membreTypeLibelle }}</p>
+                                        </td>
+                                    </ng-container>
+
+                                    <ng-container matColumnDef="membreTypeDescription">
+                                        <th class="tabInfo" mat-header-cell mat-sort-header *matHeaderCellDef>
+                                            {{fr.label_description | translate}} </th>
+                                        <td class="tabInfo" mat-cell *matCellDef="let element">
+                                            <p class="resDescription">
+                                            <p class="resDescription"> {{ element.membreTypeDescription }}</p>
+                                        </td>
+                                    </ng-container>
+
+
+                                    <ng-container matColumnDef="operations">
+                                        <th class="tabInfo" mat-header-cell *matHeaderCellDef> {{fr.label_operations |
+                                            translate}} </th>
+                                        <td class="tabInfo" mat-cell *matCellDef="let element">
+                                            <button type="button" class="btn text-white btn-sm bg-info mx-1 my-1"
+                                                matTooltip="{{fr.btn_consultation  | translate}}"
+                                                [routerLink]="['/home/membertype-view/', element.membreTypeId]">
+                                                <i class="fa fa-eye" aria-hidden="true"></i>
+
+                                            </button>
+                                            <button type="button" class="btn btn-sm text-white bg-warning mx-1 my-1"
+                                                matTooltip="{{fr.btn_modification  | translate}}"
+                                                [routerLink]="['/home/membertype-update/', element.membreTypeId]"> <i
+                                                    class="fa fa-edit" aria-hidden="true"></i>
+                                            </button>
+
+                                            <button (click)="setMemberId(element.membreTypeId)"
+                                                matTooltip="{{fr.btn_suppression|  translate}}"
+                                                class="btn text-white btn-sm bg-danger mx-1 my-1">
+                                                <i class="fa fa-trash" aria-hidden="true"></i></button>
+                                    </ng-container>
+
+                                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                                </table>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row Less-details">
+
+                        <div class="col-12">
+
+
+                            <mat-card style="margin-top:5px ;" *ngFor="let element of obs | async">
+                                <mat-card-title> {{fr.label_libelle | translate}} {{ element.membreTypeLibelle }}
+                                </mat-card-title>
+
+                                <mat-card-content> {{fr.label_description | translate}} <p class="resDescription"> {{
+                                        element.membreTypeDescription }}</p>
+                                </mat-card-content>
+                                <mat-card-footer style="text-align:right ; margin-bottom:1px ; margin-right: 1px;">
+                                    <button type="button" class="btn text-white btn-sm bg-info mx-1 my-1"
+                                        matTooltip="{{fr.btn_consultation  | translate}}"
+                                        [routerLink]="['/home/membertype-view/', element.membreTypeId]">
+                                        <i class="fa fa-eye" aria-hidden="true"></i>
+
+                                    </button>
+                                    <button type="button" class="btn btn-sm text-white bg-warning mx-1 my-1"
+                                        matTooltip="{{fr.btn_modification  | translate}}"
+                                        [routerLink]="['/home/membertype-update/', element.membreTypeId]"> <i
+                                            class="fa fa-edit" aria-hidden="true"></i>
+                                    </button>
+
+                       
+                                    <button (click)="setMemberId(element.membreTypeId)"
+                                    matTooltip="{{fr.btn_suppression|  translate}}"
+                                    class="btn text-white btn-sm bg-danger mx-1 my-1">
+                                    <i class="fa fa-trash" aria-hidden="true"></i></button>
+
+                                </mat-card-footer>
+                            </mat-card>
+
+                        </div>
+
+
+
+                    </div>
+
+                    <mat-paginator #paginator [pageSizeOptions]="[5, 10, 25]" [pageSize]="10">
+                    </mat-paginator>
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

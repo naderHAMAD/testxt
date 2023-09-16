@@ -1,0 +1,137 @@
+<div class="page-header">
+    <div class="row">
+        <div class="col-md-6 col-sm-12">
+            <div class="title">
+                <h2 class="text-blue h4"> {{fr.parametrages}}</h2>
+            </div>
+            <nav aria-label="breadcrumb" role="navigation">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a [routerLink]="'/Parametrages'">{{fr.msg_accueil}}</a>
+                    </li>
+                    <li class="breadcrumb-item text-blue " aria-current="page">
+                        {{fr.parametrages}}
+                    </li>
+                </ol>
+            </nav>
+        </div>
+
+    </div>
+</div>
+
+<div class="card-box mb-30">
+    <div class="pd-20">
+
+        <mat-card style="box-shadow: 20px ;   ">
+            <mat-card-title>
+                {{fr.parametrages}}
+            </mat-card-title>
+            <mat-card-content>
+              {{fr.parametrageDescription  | translate }}
+            </mat-card-content>
+        </mat-card>
+
+        <mat-card style="box-shadow: 20px ; margin-top: 10px ;">
+            <mat-card-title>
+                <span class="title"> {{fr.parametrages}} </span>
+            </mat-card-title>
+            <mat-card-content>
+                <div class="row">
+                    <div class="col">
+
+                    </div>
+                    <div class="col-10">
+                     
+
+
+                            <span> <a [routerLink]="'/home/membertype-list'" class="dropdown-toggle no-arrow">
+
+                                <span class="mtext"> {{fr.msg_type_membre | translate}}</span>
+                            </a></span><br>
+                          
+ 
+ 
+
+                    </div>
+
+                </div>
+
+            </mat-card-content>
+        </mat-card>
+
+        <!--
+                    <mat-card style="box-shadow: 20px ; margin-top: 10px ;">
+                        <mat-card-title>
+                         <span  class="title">   Autorité Contractante </span>
+                        </mat-card-title>
+                        <mat-card-content>
+                            <div class="row">
+                                <div class="col">
+                                     
+                                </div>
+                                <div class="col">
+                                    <B>Type Autorité Contractante </B> <br>
+                                    <B>Domaine d'activité </B> <br>
+                                  
+                                </div>
+                                <div class="col">
+                                    <B>Type Membre Cellule Passation  </B> <br>
+                                    <B>Type Membre Commission Marché   </B><br>
+                                </div>
+                            </div>
+
+                        </mat-card-content>
+                    </mat-card>
+
+                    <mat-card style="box-shadow: 20px ; margin-top: 10px ;">
+                        <mat-card-title>
+                            <span  class="title">    Système </span>
+                        </mat-card-title>
+                        <mat-card-content>
+                            <div class="row">
+                                <div class="col">
+                                     
+                                </div>
+                                <div class="col">
+                                    <B>Jour Fèrié </B> <br>
+                                    <B>Jour Repos Hebdomadaire </B> <br>
+                                    <B>Calendrier  </B><br>
+                                    <B>Gestion Message   </B>
+                             
+                                </div>
+                                <div class="col">
+                                    <B>Gestion Menu  </B> <br>
+                                    <B>Gestion Evenement </B> <br>
+                                    <B>Gestion Variables  </B> <br>
+                                  
+
+                                </div>
+                            </div>
+                        </mat-card-content>
+                    </mat-card>
+
+                    <mat-card style="box-shadow: 20px ; margin-top: 10px ;">
+                        <mat-card-title>
+                            <span  class="title">  Autres... </span>
+                        </mat-card-title>
+                        <mat-card-content>
+                            <div class="row">
+                                <div class="col">
+                                     
+                                </div>
+                                <div class="col">
+                                    <B>Civilité </B> <br>
+                                  
+                                </div>
+                                <div class="col">
+                                 
+
+                                </div>
+                            </div>
+
+                        </mat-card-content>
+                    </mat-card>
+
+-->
+    </div>
+</div>

@@ -1,0 +1,95 @@
+<div class="pd-ltr-20 xs-pd-20-10">
+  <div class="min-height-200px">
+    <div class="page-header pb-20">
+      <button type="button" class="btn btn-sm text-white bg-dark mr-3 mt-2 ml-2" routerLink="/home/membertype-list"
+        matTooltip="{{fr.tooltipBtnRetour | translate}}">
+        <i class="fa fa-arrow-left" aria-hidden="true"></i>
+      </button>
+    </div>
+ 
+
+        <div class="card-header">{{fr.msg_modification_type_membre | translate}} </div>
+
+    
+      <div class="submit-form mr-4 ml-4 mt-5 pb-5">
+        <div *ngIf="currentMemberType.membreTypeId">
+          <form [formGroup]="memberTypeForm" (ngSubmit)="updateMembreType()">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col-md-3">
+                      <b> <label for="membreTypeLibelle">{{fr.label_libelle  | translate}}<span class="required-asterisk">*</span></label> </b>
+                    </div>
+                    <div class="col-md-9">
+                      <input type="text" maxlength="100" class="form-control" formControlName="membreTypeLibelle"
+                        [(ngModel)]="currentMemberType.membreTypeLibelle" placeholder="{{fr.label_libelle  | translate}}" id="membreTypeLibelle"
+                        required pattern="\s*(\S\s*){1,}" name="membreTypeLibelle"
+                        [ngClass]="{ 'is-invalid': submitted && f['membreTypeLibelle'].errors }">
+                      <div *ngIf="submitted && f['membreTypeLibelle'].errors" class="invalid-feedback">
+                        <div *ngIf="f['membreTypeLibelle'].errors ">{{fr.msg_errors_libelle  | translate}}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col-md-3">
+                      <b> <label for="membreTypeLibelleAr">{{fr.label_libelle_arab  |translate}} </label> </b>
+                    </div>
+                    <div class="col-md-9">
+                      <input type="text" maxlength="100" class="form-control" formControlName="membreTypeLibelleAr"
+                        [(ngModel)]="currentMemberType.membreTypeLibelleAr" placeholder="{{fr.label_libelle_arab  |translate}}"
+                        id="membreTypeLibelleAr"   name="membreTypeLibelleAr" >
+              
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col-md-3">
+                      <b> <label for="membreTypeDescription">{{fr.label_description  | translate}}</label> </b>
+                    </div>
+                    <div class="col-md-9">
+                      <textarea type="text" class="form-control" formControlName="membreTypeDescription"
+                        [(ngModel)]="currentMemberType.membreTypeDescription" placeholder="{{fr.label_description  | translate}}"
+                        id="membreTypeDescription" name="membreTypeDescription" rows="4" maxlength="1000"></textarea>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col-md-3">
+                      <b> <label for="membreTypeDescriptionAr">{{fr.label_description_arabe  | translate}}</label> </b>
+                    </div>
+                    <div class="col-md-9">
+                      <textarea type="text" class="form-control" formControlName="membreTypeDescriptionAr"
+                        [(ngModel)]="currentMemberType.membreTypeDescriptionAr" placeholder="{{fr.label_description_arabe  | translate}}"
+                        id="membreTypeDescriptionAr" name="membreTypeDescriptionAr" rows="4"
+                        maxlength="1000"></textarea>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-group pb-4">
+              <button type="submit" class="btn btn-warning float-right ml-2">{{fr.btn_modification  | translate}}</button>
+              <button type="button" class="btn btn-secondary float-right"
+                routerLink="/home/membertype-list">{{fr.btn_annulation  | translate}}</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
